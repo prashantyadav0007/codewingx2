@@ -1,0 +1,24 @@
+{
+  "name": "e-learning-website-html-css",
+  "version": "1.0.0",
+  "description": "![E-Learning Website](preview.jpg)",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keerti1924/E-Learning-Website-HTML-CSS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/keerti1924/E-Learning-Website-HTML-CSS/issues"
+  },
+  "homepage": "https://github.com/keerti1924/E-Learning-Website-HTML-CSS#readme"
+}
