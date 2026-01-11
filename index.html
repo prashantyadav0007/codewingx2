@@ -4,22 +4,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="google-translate-customization" content="9f841e7780177523-3214ceb76f765f38-gc38c6fe6f9d06436-c">
-    </meta>
 
-    <title>Secret Coder : Online Courses</title>
+    <title>Codewingx : Online industrial training</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/icon.png" rel="icon">
+    <link href="img/iconC.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -35,6 +32,419 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #7C3AED 0%, #A855F7 50%, #EC4899 100%);
+            --secondary-gradient: linear-gradient(135deg, #0f1419 0%, #1a1b3a 50%, #2d1b69 100%);
+            --accent-purple: #A855F7;
+            --accent-pink: #EC4899;
+            --accent-blue: #3B82F6;
+            --dark-bg: #0f1419;
+            --card-bg: rgba(26, 27, 58, 0.5);
+            --text-primary: #FFFFFF;
+            --text-secondary: #CBD5E1;
+        }
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: var(--text-secondary);
+        }
+
+        /* Hide spinner after load */
+        #spinner {
+            display: none !important;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background: var(--secondary-gradient) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(168, 85, 247, 0.1);
+        }
+
+        .navbar-brand img {
+            filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.3));
+        }
+
+        .nav-link {
+            color: var(--text-secondary) !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-purple) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        .dropdown-menu {
+            background: rgba(26, 27, 58, 0.95);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .dropdown-item {
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(168, 85, 247, 0.2);
+            color: var(--accent-purple);
+        }
+
+        /* Button Styling */
+        .btn-primary {
+            background: var(--primary-gradient);
+            border: none;
+            font-weight: 600;
+            border-radius: 50px;
+            padding: 12px 32px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
+        }
+
+        .btn-light {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--accent-purple);
+            color: white !important;
+            font-weight: 600;
+            border-radius: 50px;
+            padding: 12px 32px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .btn-light:hover {
+            background: rgba(168, 85, 247, 0.2);
+            border-color: var(--accent-pink);
+            color: white !important;
+        }
+
+        /* Carousel Styling */
+        .owl-carousel-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .owl-carousel-item .position-absolute {
+            background: radial-gradient(circle at top right, rgba(168, 85, 247, 0.3), rgba(24, 29, 56, 0.7)) !important;
+        }
+
+        .display-3 {
+            background: linear-gradient(135deg, #FFFFFF 0%, #CBD5E1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h5.text-uppercase {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        /* Service Cards */
+        .service-item {
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-purple);
+            box-shadow: 0 20px 40px rgba(168, 85, 247, 0.3);
+        }
+
+        .service-item h5 {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .service-item p {
+            color: var(--text-secondary);
+        }
+
+        /* Section Titles */
+        .section-title {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: var(--text-primary);
+        }
+
+        /* Course Cards */
+        .course-item {
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .course-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-purple);
+            box-shadow: 0 15px 35px rgba(168, 85, 247, 0.3);
+        }
+
+        .course-item h5 {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .course-item h5 a {
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .course-item .image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-item .image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(15, 20, 25, 0.8) 100%);
+        }
+
+        .course-item small {
+            color: var(--text-secondary);
+        }
+
+        .text-primary {
+            color: var(--accent-purple) !important;
+        }
+
+        /* Category Cards */
+        .content {
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+        }
+
+        .content:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-purple);
+            box-shadow: 0 10px 25px rgba(168, 85, 247, 0.3);
+        }
+
+        .content h5 a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .content h5 a:hover {
+            color: var(--accent-purple);
+        }
+
+        .content img {
+            transition: transform 0.3s ease;
+        }
+
+        .content:hover img {
+            transform: scale(1.1);
+        }
+
+        /* FAQ Styling */
+        .accordion-item {
+            background: var(--card-bg);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .accordion-button {
+            background: transparent;
+            color: var(--text-primary);
+            font-weight: 600;
+            border: none;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: rgba(168, 85, 247, 0.1);
+            color: var(--accent-purple);
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: var(--accent-purple);
+        }
+
+        .accordion-body {
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary-gradient);
+            border-top: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .footer h4 {
+            color: var(--text-primary);
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-gradient);
+        }
+
+        .footer .text-light {
+            color: var(--text-secondary) !important;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer .text-light:hover {
+            color: var(--accent-purple) !important;
+        }
+
+        .btn-social {
+            background: rgba(168, 85, 247, 0.1);
+            border-color: var(--accent-purple);
+            transition: all 0.3s ease;
+        }
+
+        .btn-social:hover {
+            background: var(--primary-gradient);
+            border-color: transparent;
+            transform: translateY(-3px);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
+        }
+
+        /* Banner Section */
+        .bg-light {
+            background: rgba(26, 27, 58, 0.3) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Custom Gradient Text */
+        .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* About section */
+        .fa-arrow-right {
+            color: var(--accent-purple);
+        }
+
+        /* Form styling */
+        .form-control {
+            background: rgba(26, 27, 58, 0.5);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            color: var(--text-primary);
+        }
+
+        .form-control:focus {
+            background: rgba(26, 27, 58, 0.7);
+            border-color: var(--accent-purple);
+            color: var(--text-primary);
+            box-shadow: 0 0 0 0.2rem rgba(168, 85, 247, 0.25);
+        }
+
+        .form-control::placeholder {
+            color: var(--text-secondary);
+        }
+    </style>
 </head>
 
 <body>
@@ -48,41 +458,35 @@
     <!-- Spinner End -->
 
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px">Secret<span
-                    style="color: #fb873f;">Coder</span></p>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="courses.html" class="nav-item nav-link">Courses</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-
-                    </div>
+ <nav class="navbar navbar-expand-lg navbar-dark shadow sticky-top p-0">
+    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <img src="img/logoC.png" alt="Logo" height="50px">
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="index.html" class="nav-item nav-link active">Home</a>
+            <a href="about.html" class="nav-item nav-link">About</a>
+            <a href="courses.html" class="nav-item nav-link">Courses</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                <div class="dropdown-menu fade-down m-0">
+                    <a href="team.html" class="dropdown-item">Our Team</a>
+                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
-                <a href="#" class="nav-item nav-link">
-
-                <div id="google_translate_element">
-                </div>
-
-
-                </a>
             </div>
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+            <a href="#" class="nav-item nav-link">
+                <div id="google_translate_element"></div>
+            </a>
         </div>
-    </nav>
-    <!-- Navbar End -->
+    </div>
+</nav>
+
+
 
 
     <!-- Carousel Start -->
@@ -90,17 +494,13 @@
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
                 <img class="img-fluid" src="img/carousel-1.jpg" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-                    style="background: rgba(24, 29, 56, .7);">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class=" text-uppercase mb-3 animated slideInDown" style="color: #fb873f;">Best
-                                    E-learning platform</h5>
-                                <h1 class="display-3 text-white animated slideInDown">Learn Job ready skills from free
-                                    online courses with certificates</h1>
-                                <p class=" text-white mb-4 pb-2">Explore a wide range of courses designed to enhance
-                                    your expertise in technology, business, arts, and more. Start learning today!</p>
+                                <h5 class="text-uppercase mb-3 animated slideInDown">Industrial Training Programme</h5>
+                                <h1 class="display-3 text-white animated slideInDown">Learn Job ready skills from live Industrial Training with certificates</h1>
+                                <p class="text-white mb-4 pb-2">Master real-world industrial skills from anywhere. Start your plant-ready journey today!</p>
                                 <a href="about.html"
                                     class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="signup.html" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join
@@ -112,16 +512,15 @@
             </div>
             <div class="owl-carousel-item position-relative">
                 <img class="img-fluid" src="img/carousel-2.jpg" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-                    style="background: rgba(24, 29, 56, .7);">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class=" text-uppercase mb-3 animated slideInDown" style="color: #fb873f;">Welcome to
+                                <h5 class="text-uppercase mb-3 animated slideInDown">Welcome to
                                     Secret Coder</h5>
                                 <h1 class="display-3 text-white animated slideInDown">Interactive Learning Experience
                                 </h1>
-                                <p class=" text-white mb-4 pb-2">Engage with interactive lessons, quizzes, and
+                                <p class="text-white mb-4 pb-2">Engage with interactive lessons, quizzes, and
                                     projects. Experience hands-on learning that keeps you motivated and inspired.</p>
                                 <a href="about.html"
                                     class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
@@ -138,56 +537,139 @@
 
 
     <!-- Service Start -->
+    <!-- Service Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-2 text-center">
                 <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
-                    <h1 style="color: #fb873f;">Invest in your professional goals with Secret Coder</h1>
+                    <h1 class="gradient-text">Invest in your professional goals with Secret Coder</h1>
                     <p class="mb-5">Get unlimited access to over 90% of courses, Projects, Specializations, and
                         Professional Certificates on Coursera, taught by top instructors.</p>
                 </div>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item text-center pt-3 shadow">
-                        <div class="p-4">
-                            <img src="img/icon1.png" alt="" width="60px" class="mb-4">
-                            <h5 class="mb-3">Learn anything</h5>
-                            <p>Explore any interest or trending topic, take prerequisites, and advance your skills</p>
+            
+            <!-- Why Choose Section -->
+            <div class="text-center mb-5 mt-5">
+                <h1 class="text-white mb-3">Why Choose Our Industrial Training?</h1>
+                <p class="text-secondary">GET RELISH No FLE Cymic Industrial Trainimgrams. Our Servelo smris.</p>
+            </div>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center pt-4 pb-4 shadow">
+                        <div class="p-3">
+                            <div class="mb-4">
+                                <i class="fas fa-cog fa-3x" style="color: #6366F1;"></i>
+                            </div>
+                            <h5 class="mb-3 text-white">Industry-Designed Curriculum</h5>
+                            <p class="text-secondary mb-3">#Internalship #Seasement</p>
+                            <a href="#" class="text-primary fw-bold">View Saveneali</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item text-center pt-3 shadow">
-                        <div class="p-4">
-                            <img src="img/icon2.png" alt="" width="60px" class="mb-4">
-                            <h5 class="mb-3">Save money</h5>
-                            <p>Spend less money on your learning if you plan to take multiple courses this year</p>
+                
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="service-item text-center pt-4 pb-4 shadow">
+                        <div class="p-3">
+                            <div class="mb-4">
+                                <i class="fas fa-file-alt fa-3x" style="color: #6366F1;"></i>
+                            </div>
+                            <h5 class="mb-3 text-white">Live Projects & Case Studies</h5>
+                            <p class="text-secondary mb-3">#Internalship #Seasement</p>
+                            <a href="#" class="text-primary fw-bold">View Saveneali</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item text-center pt-3 shadow">
-                        <div class="p-4">
-                            <img src="img/icon3.png" alt="" width="60px" class="mb-4">
-                            <h5 class="mb-3">Flexible learning</h5>
-                            <p>Learn at your own pace, move between multiple courses, or switch to a different course
-                            </p>
+                
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item text-center pt-4 pb-4 shadow">
+                        <div class="p-3">
+                            <div class="mb-4">
+                                <i class="fas fa-users fa-3x" style="color: #6366F1;"></i>
+                            </div>
+                            <h5 class="mb-3 text-white">Mentorship by Professionals</h5>
+                            <p class="text-secondary mb-3">#Internalship #Seasement</p>
+                            <a href="#" class="text-primary fw-bold">Cyber Security</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item text-center pt-3 shadow">
-                        <div class="p-4">
-                            <img src="img/icon4.png" alt="" width="60px" class="mb-4">
-                            <h5 class="mb-3">Unlimited certificates</h5>
-                            <p>Earn a certificate for every learning program that you complete at no additional cost</p>
+                
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-item text-center pt-4 pb-4 shadow">
+                        <div class="p-3">
+                            <div class="mb-4">
+                                <i class="fas fa-clock fa-3x" style="color: #6366F1;"></i>
+                            </div>
+                            <h5 class="mb-3 text-white">Internship & Placement Support</h5>
+                            <p class="text-secondary mb-3">#Internalship #Seasement</p>
+                            <a href="#" class="text-primary fw-bold">View Curriculum</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+            
+            <!-- Programs Offered Section -->
+            <div class="text-center mb-5 mt-5">
+                <h1 class="text-white mb-4">Programs Offered</h1>
+            </div>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center pt-4 pb-4 shadow">
+                        <div class="p-3">
+                            <div class="mb-4">
+                                <i class="fas fa-code fa-3x" style="color: #6366F1;"></i>
+                            </div>
+                            <h5 class="mb-3 text-white">Full Stack Web Development</h5>
+                            <p class="text-secondary mb-2"><strong>Duration:</strong> 6 months</p>
+                            <p class="text-secondary mb-2"><strong>Tools:</strong> 88 ka esenting</p>
+                            <a href="#" class="btn btn-sm btn-primary mt-3 px-4">VIEW CURRICULUM</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="service-item text-center pt-4 pb-4 shadow">
+                        <div class="p-3">
+                            <div class="mb-4">
+                                <i class="fas fa-brain fa-3x" style="color: #6366F1;"></i>
+                            </div>
+                            <h5 class="mb-3 text-white">Artificial Intelligence & ML</h5>
+                            <p class="text-secondary mb-2"><strong>Duration:</strong> 6 months</p>
+                            <p class="text-secondary mb-2"><strong>Tools:</strong> 89 darta</p>
+                            <a href="#" class="btn btn-sm btn-primary mt-3 px-4">VIEW CURRICULUM</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item text-center pt-4 pb-4 shadow">
+                        <div class="p-3">
+                            <div class="mb-4">
+                                <i class="fas fa-cloud fa-3x" style="color: #6366F1;"></i>
+                            </div>
+                            <h5 class="mb-3 text-white">Cloud Computing & DevOps</h5>
+                            <p class="text-secondary mb-2"><strong>Duration:</strong> 6 months</p>
+                            <p class="text-secondary mb-2"><strong>Tools:</strong> 93 o monning</p>
+                            <a href="#" class="btn btn-sm btn-primary mt-3 px-4">VIEW CURRICULUM</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-item text-center pt-4 pb-4 shadow">
+                        <div class="p-3">
+                            <div class="mb-4">
+                                <i class="fas fa-chart-line fa-3x" style="color: #6366F1;"></i>
+                            </div>
+                            <h5 class="mb-3 text-white">Data Scienuity & Analytics</h5>
+                            <p class="text-secondary mb-2"><strong>Duration:</strong> 6 months</p>
+                            <p class="text-secondary mb-2"><strong>Tools:</strong> 85 o onening</p>
+                            <a href="#" class="btn btn-sm btn-primary mt-3 px-4">VIEW CURRICULUM</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
     <!-- Service End -->
 
 
@@ -203,7 +685,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h6 class="section-title bg-white text-start pe-3">About Us</h6>
-                    <h1 class="mb-4" style="color: #fb873f;">Welcome to Secret Coder</h1>
+                    <h1 class="mb-4 gradient-text">Welcome to Secret Coder</h1>
                     <p class="mb-4">At Secret Coder, we believe in accessible, innovative learning experiences that
                         adapt to your schedule and learning style. Join us in embracing the future of education and
                         unlock your potential with our immersive online courses.</p>
@@ -213,7 +695,7 @@
                         where knowledge knows no limits.</p>
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right  me-2"></i>Expert Instructors</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right me-2"></i>Expert Instructors</p>
                         </div>
                         <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa-arrow-right me-2"></i>Live Interactive Sessions</p>
@@ -231,7 +713,7 @@
                             <p class="mb-0"><i class="fa fa-arrow-right me-2"></i>Certification and Recognition</p>
                         </div>
                     </div>
-                    <a class="btn text-light py-3 px-5 mt-2" href="about.html">Read More</a>
+                    <a class="btn btn-primary text-light py-3 px-5 mt-2" href="about.html">Read More</a>
                 </div>
             </div>
         </div>
@@ -247,11 +729,11 @@
             <div class="row g-5 ">
                 <div class="col-lg-6 p-5 wow fadeInUp" data-wow-delay="0.3s">
 
-                    <h1 class="mb-4" style="color: #fb873f;">Explore Free Courses</h1>
+                    <h1 class="mb-4 gradient-text">Explore Free Courses</h1>
                     <p class="mb-4">Start your online learning journey at Great Learning Academy for free with our
                         short-term basic courses across various in-demand domains.</p>
 
-                    <a class="btn text-light py-3 px-5 mt-2" href="signup.html">Start For Free</a>
+                    <a class="btn btn-primary text-light py-3 px-5 mt-2" href="signup.html">Start For Free</a>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
@@ -267,97 +749,81 @@
 
 
     <!-- Categories Start -->
-    <div class="container-xxl py-5 category">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center px-3">Categories</h6>
-                <h1 class="mb-5" style="color: #fb873f;">Popular Topics to Explore</h1>
+<div class="container-xxl py-5 category">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center px-3">Categories</h6>
+            <h1 class="mb-5 gradient-text">Popular Topics to Explore</h1>
+        </div>
+        <div class="row g-2 m-2">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="img/cat1.png" class="img-fluid" alt="UI/UX Design">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center">UI/UX Design</a>
+                    </h5>
+                </div>
             </div>
-            <div class="row g-2 m-2">
-                <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat1.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">Microsoft Excel</a>
-                        </h5>
-                    </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="img/cat2.png" class="img-fluid" alt="Microsoft Excel">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center">Microsoft Excel</a>
+                    </h5>
                 </div>
-                <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat2.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center"> AWS</a>
-                        </h5>
-                    </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="img/cat3.png" class="img-fluid" alt="AWS">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center">AWS</a>
+                    </h5>
                 </div>
-                <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat3.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">Python</a>
-                        </h5>
-                    </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="img/cat4.png" class="img-fluid" alt="Python">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center">Python</a>
+                    </h5>
                 </div>
-                <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat4.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">Java</a>
-                        </h5>
-                    </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="img/cat5.png" class="img-fluid" alt="Java">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center">Java</a>
+                    </h5>
                 </div>
-                <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat5.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">Web Design</a>
-                        </h5>
-                    </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="img/cat6.png" class="img-fluid" alt="Web Design">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center">Web Design</a>
+                    </h5>
                 </div>
-                <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat6.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">Web Development</a>
-                        </h5>
-                    </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="img/cat7.png" class="img-fluid" alt="Web Development">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center">Web Development</a>
+                    </h5>
                 </div>
-                <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat7.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">MySQL</a>
-                        </h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6  text-center">
-                    <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
-
-                        <img src="img/cat8.png" class="img-fluid" alt="categories"></i>
-
-                        <h5 class="my-2">
-                            <a href="#" class="text-center">UI/UX Design</a>
-                        </h5>
-                    </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="content shadow p-3 mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                    <img src="img/cat8.png" class="img-fluid" alt="MySQL">
+                    <h5 class="my-2">
+                        <a href="#" class="text-center">MySQL</a>
+                    </h5>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Categories End -->
+</div>
+<!-- Categories End -->
 
 
    <!-- Courses Start -->
@@ -365,14 +831,14 @@
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center px-3">Popular Courses</h6>
-                <h1 class="mb-5" style="color: #fb873f;">Explore new and trending free online courses</h1>
+                <h1 class="mb-5 gradient-text">Explore new and trending free online courses</h1>
             </div>
             <div class="row g-4 py-2">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="course-item shadow">
                         <div class="position-relative overflow-hidden text-light image">
                             <img class="img-fluid" src="img/course-1.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background: var(--primary-gradient);"
                                 class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                         </div>
@@ -433,7 +899,7 @@
                     <div class="course-item shadow">
                         <div class="position-relative overflow-hidden text-light image">
                             <img class="img-fluid" src="img/course-3.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background: var(--primary-gradient);"
                                 class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                         </div>
@@ -495,7 +961,7 @@
                     <div class="course-item shadow">
                         <div class="position-relative overflow-hidden text-light image">
                             <img class="img-fluid" src="img/course-5.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background: var(--primary-gradient);"
                                 class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                         </div>
@@ -526,7 +992,7 @@
                     <div class="course-item shadow">
                         <div class="position-relative overflow-hidden text-light image">
                             <img class="img-fluid" src="img/course-6.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background: var(--primary-gradient);"
                                 class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                         </div>
@@ -557,7 +1023,7 @@
                     <div class="course-item shadow">
                         <div class="position-relative overflow-hidden text-light image">
                             <img class="img-fluid" src="img/course-7.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background: var(--primary-gradient);"
                                 class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                         </div>
@@ -619,7 +1085,7 @@
                     <div class="course-item shadow">
                         <div class="position-relative overflow-hidden text-light image">
                             <img class="img-fluid" src="img/course-9.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background: var(--primary-gradient);"
                                 class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                         </div>
@@ -682,7 +1148,7 @@
                     <div class="course-item shadow">
                         <div class="position-relative overflow-hidden text-light image">
                             <img class="img-fluid" src="img/course-11.jpg" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background: var(--primary-gradient);"
                                 class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                         </div>
@@ -713,7 +1179,7 @@
                     <div class="course-item shadow">
                         <div class="position-relative overflow-hidden text-light image">
                             <img class="img-fluid" src="img/course-12.png" alt="">
-                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background: var(--primary-gradient);"
                                 class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                         </div>
@@ -745,7 +1211,7 @@
         </div>
     </div>
     <div class="container text-center">
-        <a class="btn text-light py-3 px-5 mt-2 mb-5" href="courses.html">All Courses</a>
+        <a class="btn btn-primary text-light py-3 px-5 mt-2 mb-5" href="courses.html">All Courses</a>
     </div>
     <!-- Courses End -->
 
@@ -765,11 +1231,11 @@
     
                     <div class="col-lg-6 p-5 wow fadeInUp" data-wow-delay="0.3s">
     
-                        <h1 class="mb-4" style="color: #fb873f;">Become an Instructor</h1>
+                        <h1 class="mb-4 gradient-text">Become an Instructor</h1>
                         <p class="mb-4 text-white">Instructors from around the world teach millions of learners on Udemy. We provide
                             the tools and skills to teach what you love.</p>
     
-                        <a class="btn text-light py-3 mt-2" href="instructor.html">Start Teaching Today</a>
+                        <a class="btn btn-primary text-light py-3 mt-2" href="instructor.html">Start Teaching Today</a>
                     </div>
     
                 </div>
@@ -783,7 +1249,7 @@
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 
-                <h1 class="mb-5">Frequently Asked Questions</h1>
+                <h1 class="mb-5 gradient-text">Frequently Asked Questions</h1>
             </div>
             <div class="row g-2">
                 <div class="col-12">
@@ -832,7 +1298,7 @@
                             </h2>
                             <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                You can click on the “Sign Up” button at the top-right of the page and register with your email address, or you can sign up using your Google Account.       
+                                You can click on the "Sign Up" button at the top-right of the page and register with your email address, or you can sign up using your Google Account.       
                                 </div>
                             </div>
                           </div>
@@ -932,3 +1398,5 @@
 </body>
 
 </html>
+
+                        
